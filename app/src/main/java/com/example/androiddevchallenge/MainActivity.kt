@@ -18,11 +18,14 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.model.catDataSource
+import com.example.androiddevchallenge.ui.cats.CatList
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -30,25 +33,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                MyApp {
+                    MyScreenContent()
+                }
             }
         }
     }
 }
 
-// Start building your app here!
+//region Screen rendering
 @Composable
-fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+fun MyApp(content: @Composable () -> Unit) {
+    Surface(Modifier.fillMaxWidth(), color = MaterialTheme.colors.background) {
+        content()
     }
 }
 
+@Composable
+fun MyScreenContent() {
+    CatList(
+        cats = catDataSource,
+        Modifier.fillMaxWidth()
+    )
+}
+//endregion
+
+//region Previewers
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp()
+        MyApp {
+            MyScreenContent()
+        }
     }
 }
 
@@ -56,6 +73,9 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp()
+        MyApp {
+            MyScreenContent()
+        }
     }
 }
+//endregion
