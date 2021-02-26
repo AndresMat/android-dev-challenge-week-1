@@ -12,7 +12,7 @@ The UI layer is built with Jetpack Compose.
 ## :bulb: Motivation and Context
 Starting to learn Compose and taking steps towards what is probably going to be the way we build Apps for years to come is very exciting.
 
-Almost as cool as 🐱 are!
+Almost as cool as 🐱🐱 are!
 
 
 ## :camera_flash: Screenshots
