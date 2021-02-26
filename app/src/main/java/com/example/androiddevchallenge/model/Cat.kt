@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.model
 
 import androidx.compose.ui.graphics.Color
@@ -6,6 +21,7 @@ import com.example.androiddevchallenge.ui.theme.beige
 import com.example.androiddevchallenge.ui.theme.gray
 
 data class Cat(
+    val id: Int,
     val name: String,
     val gender: String,
     val age: String,
@@ -17,19 +33,19 @@ data class Cat(
 //region Cats mock datasource
 val catDataSource = listOf(
     Cat(
-        "Luna", "♀️", "1 year old", "Siberian cat", gray, R.drawable.cat_1
+        1, "Luna", "♀️", "1 year old", "Siberian cat", gray, R.drawable.cat_1
     ),
     Cat(
-        "Milo", "♂️", "3 year old", "Tabby cat", beige, R.drawable.cat_2
+        2, "Milo", "♂️", "3 years old", "Tabby cat", beige, R.drawable.cat_2
     ),
     Cat(
-        "Simba", "♂️", "2 year old", "Arabian cat", gray, R.drawable.cat_3
+        3, "Simba", "♂️", "2 years old", "Arabian cat", gray, R.drawable.cat_3
     ),
     Cat(
-        "Lucy", "♀️", "5 year old", "British Shorthair", beige, R.drawable.cat_4
+        4, "Lucy", "♀️", "5 years old", "British Shorthair", beige, R.drawable.cat_4
     ),
     Cat(
-        "Lily", "♀️", "7 year old", "Persian cat", gray, R.drawable.cat_5
+        5, "Lily", "♀️", "7 years old", "Persian cat", gray, R.drawable.cat_5
     )
 )
 //endregion

@@ -10,4 +10,7 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="adopt_a_cat">Adopt a Cat</string>
+    <string name="adopt_me">Adopt me</string>
+    <string name="thanks_adopt_me">Thanks for choosing me!</string>
 </resources>

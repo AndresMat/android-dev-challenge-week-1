@@ -24,17 +24,17 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.model.catDataSource
-import com.example.androiddevchallenge.ui.cats.CatList
+import com.example.androiddevchallenge.navigation.SetUpNavigation
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
                 MyApp {
-                    MyScreenContent()
+                    SetUpNavigation()
                 }
             }
         }
@@ -48,14 +48,6 @@ fun MyApp(content: @Composable () -> Unit) {
         content()
     }
 }
-
-@Composable
-fun MyScreenContent() {
-    CatList(
-        cats = catDataSource,
-        Modifier.fillMaxWidth()
-    )
-}
 //endregion
 
 //region Previewers
@@ -63,9 +55,7 @@ fun MyScreenContent() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp {
-            MyScreenContent()
-        }
+        SetUpNavigation()
     }
 }
 
@@ -73,9 +63,8 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp {
-            MyScreenContent()
-        }
+        SetUpNavigation()
     }
 }
 //endregion
+
