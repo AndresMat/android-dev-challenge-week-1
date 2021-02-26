@@ -16,7 +16,6 @@ import com.example.androiddevchallenge.model.Cat
 import com.example.androiddevchallenge.ui.theme.black
 import com.example.androiddevchallenge.ui.theme.grayFont
 
-
 @Composable
 fun CatImage(cat: Cat, modifier: Modifier) {
     Image(
